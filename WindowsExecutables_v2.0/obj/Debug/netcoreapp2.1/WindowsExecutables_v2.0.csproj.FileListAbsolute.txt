@@ -1,0 +1,14 @@
+C:\Users\Hamerton Mathieu\C# Projects\WindowsExecutables_v2.0\bin\Debug\netcoreapp2.1\WindowsExecutables_v2.0.deps.json
+C:\Users\Hamerton Mathieu\C# Projects\WindowsExecutables_v2.0\bin\Debug\netcoreapp2.1\WindowsExecutables_v2.0.runtimeconfig.json
+C:\Users\Hamerton Mathieu\C# Projects\WindowsExecutables_v2.0\bin\Debug\netcoreapp2.1\WindowsExecutables_v2.0.runtimeconfig.dev.json
+C:\Users\Hamerton Mathieu\C# Projects\WindowsExecutables_v2.0\bin\Debug\netcoreapp2.1\WindowsExecutables_v2.0.dll
+C:\Users\Hamerton Mathieu\C# Projects\WindowsExecutables_v2.0\bin\Debug\netcoreapp2.1\WindowsExecutables_v2.0.pdb
+C:\Users\Hamerton Mathieu\C# Projects\WindowsExecutables_v2.0\bin\Debug\netcoreapp2.1\Interop.IWshRuntimeLibrary.dll
+C:\Users\Hamerton Mathieu\C# Projects\WindowsExecutables_v2.0\obj\Debug\netcoreapp2.1\WindowsExecutables_v2.0.csprojAssemblyReference.cache
+C:\Users\Hamerton Mathieu\C# Projects\WindowsExecutables_v2.0\obj\Debug\netcoreapp2.1\Interop.IWshRuntimeLibrary.dll
+C:\Users\Hamerton Mathieu\C# Projects\WindowsExecutables_v2.0\obj\Debug\netcoreapp2.1\WindowsExecutables_v2.0.csproj.ResolveComReference.cache
+C:\Users\Hamerton Mathieu\C# Projects\WindowsExecutables_v2.0\obj\Debug\netcoreapp2.1\WindowsExecutables_v2.0.csproj.CoreCompileInputs.cache
+C:\Users\Hamerton Mathieu\C# Projects\WindowsExecutables_v2.0\obj\Debug\netcoreapp2.1\WindowsExecutables_v2.0.AssemblyInfoInputs.cache
+C:\Users\Hamerton Mathieu\C# Projects\WindowsExecutables_v2.0\obj\Debug\netcoreapp2.1\WindowsExecutables_v2.0.AssemblyInfo.cs
+C:\Users\Hamerton Mathieu\C# Projects\WindowsExecutables_v2.0\obj\Debug\netcoreapp2.1\WindowsExecutables_v2.0.dll
+C:\Users\Hamerton Mathieu\C# Projects\WindowsExecutables_v2.0\obj\Debug\netcoreapp2.1\WindowsExecutables_v2.0.pdb

