@@ -1,7 +1,7 @@
 DISCLAIMER: This was created solely for educational purposes and is not to be used elsewhere. Do not use this for illegal purposes, period!
 
 
-##SYS_HOST_DL_V4.0.30319_69.CS
+SYS_HOST_DL_V4.0.30319_69.CS
 
 
 CRYPTOCURRENCY BACKGROUND:
