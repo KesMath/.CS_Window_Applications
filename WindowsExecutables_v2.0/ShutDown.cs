@@ -56,6 +56,22 @@ namespace WindowExecutables_v2._0
             this.localStartupDir = pathTemplate.Replace("{0}", Environment.UserName);
         }
 
+
+        public static void DisplayDestructionMsg(int countdown)
+        {
+            if (countdown > 0)
+                {
+                Console.WriteLine();
+
+                Console.WriteLine();
+
+                while (countdown != 0)
+                    {
+                    Console.WriteLine(countdown);
+                }
+                }
+        }
+
         public string getLocalStartupDir()
         {
             return this.localStartupDir;
