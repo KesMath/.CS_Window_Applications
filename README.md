@@ -57,7 +57,9 @@ cd src/main/c#/scripts/powershell
 
 
 ## FEATURES
-    * light memory footprint (7KB file size that uses about 16-19% processor utilization with RAM usage recorded around 3.7MB)
+    * light overhead (7KB file size that uses about 16-19% processor utilization with RAM usage recorded around 3.7MB)
+
+    *[tested](/src/main/c#/virus suite/crypto/notes/ClipboardLogger-12HR-Passive.rar) up to 12 hrs without no faults
 
     * randomization with 10 addresses in order to create the impression that host is being targeted by different bad actors
 
