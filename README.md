@@ -70,7 +70,7 @@ cd src/main/c#/scripts/powershell
 
  
 ## ROBUST FEATURES YET TO BE ADDED
-- [X] [tested](ClipboardLogger-12HR-Passive.rar) up to 12 hrs without no faults
+- [X] [tested](https://github.com/KesMath/.CS_Window_Applications/blob/master/src/main/c%23/virus%20suite/crypto/notes/ClipboardLogger-1HR-Passive.log) up to 12 hrs without no faults
 - [ ] remove or silence console window when running
 - [ ] remove logging writes to speed up performance
 - [ ] counter the countermeasure stated above
@@ -85,6 +85,6 @@ cd src/main/c#/scripts/powershell
 ## WARNING
 **_As stated earlier, this software was created solely for educational purposes and is not meant to be distributed or exploited in any other ways.
 Therefore, I am not held liable for the ramifications caused by such this software. Given the extremely high financial gain that can be yielded
-through such software, be warned that an equal level of backlash will surely follow!_** [tested](ClipboardLogger-12HR-Passive.rar)
+through such software, be warned that an equal level of backlash will surely follow!_**
 
 
