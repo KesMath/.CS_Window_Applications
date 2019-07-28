@@ -1,4 +1,4 @@
-# :skull_and_crossbones: ETHEREUM WALLET ADDRESS SWAPPER :skull_and_crossbones:
+# :skull_and_crossbones::money_mouth_face: ETHEREUM WALLET ADDRESS SWAPPER :money_mouth_face::skull_and_crossbones:
  
 
 
@@ -18,7 +18,7 @@ As a direct result of following such standard, progeny cryptos that extends or i
 will have the same wallet address format that prefixes with 0x and is 42 characters long of randomly distributed alphanumeric text.
 This is where this listener exploit becomes advantageous.
 
-(FYI visit https://eidoo.io/erc20-tokens-list to see all ETH based cryptos.
+(FYI visit [ERC-20 Token List](https://eidoo.io/erc20-tokens-list) to see all ETH based cryptos.
 Viewing this list should open your eyes to the yield potency behind this exploit if it were to live on a vast number of machines)
 
 
