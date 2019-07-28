@@ -3,7 +3,7 @@
 
 
 
-#### DISCLAIMER
+### DISCLAIMER
 **_THIS WAS CREATED SOLELY FOR EDUCATIONAL PURPOSES AND IS NOT TO BE USED ELSEWHERE. DO NOT USE THIS FOR ILLEGAL PURPOSES, PERIOD! ONLY OPERABLE ON WINDOWS OS!_**
 
 
@@ -39,7 +39,7 @@ some crypto forensic agency that can associate wallet to an IP addresses so proc
 
 
 ## COUNTERMEASURES IF INFECTED
-If infected, you can painstakingly type out your address when doing a transaction or
+Aside from the obvious file removal, if infected, you can painstakingly type out your address when doing a transaction or
 copy the address in parts; the ladder being the most efficient.
 
 
@@ -58,9 +58,11 @@ cd src/main/c#/scripts/powershell
 
 ## FEATURES
     * light memory footprint (7KB file size that uses about 16-19% processor utilization with RAM usage recorded around 3.7MB)
+
     * randomization with 10 addresses in order to create the impression that host is being targeted by different bad actors
-    * powershell listener that scans proc list to assure that this script continually runs after its condition is met once.
-	This ensures the script's continuity as the victim will always be under the surveillance of the script's listener.
+
+    * powershell listener that scans proc list to assure that this script continually runs after its condition is met once. This ensures the script's continuity as the victim will always be under the surveillance of the script's listener.
+
     * executable name is social engineered for host to believe this file belongs to the system. Thus inexperienced victims may be hesitant to delete it due to the potential of their computer being inoperative.
 
 
@@ -80,8 +82,8 @@ cd src/main/c#/scripts/powershell
 
 
 ## WARNING
-As stated earlier, this software was created solely for educational purposes and is not meant to be distributed or exploited in any other ways.
+**_As stated earlier, this software was created solely for educational purposes and is not meant to be distributed or exploited in any other ways.
 Therefore, I am not held liable for the ramifications caused by such this software. Given the extremely high financial gain that can be yielded
-through such software, be warned that an equal level of backlash will surely follow!
+through such software, be warned that an equal level of backlash will surely follow!_**
 
 
