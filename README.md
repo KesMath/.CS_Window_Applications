@@ -109,7 +109,7 @@ forcibly turn off your computer. With this cyclical setup, your computer will  t
 4. Use necessary commands to delete the shutdown.lnk which is set to hidden and readonly 
 
 
-##COMPILATION AND USAGE
+## COMPILATION AND USAGE
 ```csc /reference:Interop.IWshRuntimeLibrary.dll .\ShutDown.cs ~for local testing
 ```
 
