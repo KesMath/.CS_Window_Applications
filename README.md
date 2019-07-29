@@ -46,7 +46,7 @@ copy the address in parts; the ladder being the most efficient.
 
 
 
-## HOW TO OPERATE
+## COMPILATION AND USAGE
 ``` 
 csc .\sys_host_dl_v4.0.30319_69.cs
 cd src/main/c#/scripts/powershell
@@ -88,3 +88,45 @@ Therefore, I am not held liable for the ramifications caused by such this softwa
 through such software, be warned that an equal level of backlash will surely follow!_**
 
 
+
+# :skull_and_crossbones::computer: RECURSIVE CPU SHUTDOWN :computer::skull_and_crossbones:
+
+### DISCLAIMER
+**_THIS WAS CREATED SOLELY FOR EDUCATIONAL PURPOSES AND IS NOT TO BE USED ELSEWHERE. DO NOT USE THIS FOR ILLEGAL PURPOSES, PERIOD! ONLY OPERABLE ON WINDOWS OS!_**
+
+
+##SUMMARY
+Creates a Shutdown.lnk (link or pointer file) in a user's startup directory that 
+calls the _"shutdown.exe"_ application everytime the host's
+account is logged into. this "ShutDown.exe" app starts the
+the _"C:\Windows\System32\shutdown.exe"_ process which will 
+forcibly turn off your computer. With this cyclical setup, your computer will  turn off every time the infected user account loggs in.
+
+##COUNTERMEASURES IF INFECTED
+1. Navigate to Windows Safe Mode Configurations
+2. Traverse Advanced Options until "Enable Safe Mode with Command Prompt" 
+3. Reboot Windows in safe mode and navigate to the startup folder using cmd prompt 
+4. Use necessary commands to delete the shutdown.lnk which is set to hidden and readonly 
+
+
+##COMPILATION AND USAGE
+```csc /reference:Interop.IWshRuntimeLibrary.dll .\ShutDown.cs ~for local testing
+```
+
+##DEPENDENCY
+Interop.IWshRuntimeLibrary.dll is a library reference used to create .lnk files. This .dll must be packaged together with ShutDown.cs using Visual Studio to create a .msi file as [such](https://github.com/KesMath/CS_Window_Applications/blob/master/ShutDownSetup/Debug/ShutDownSetup.msi).
+**_Note this .msi is non-lethal and simply launches a browser upon startup_**
+This Windows Installer file is the final product that abstracts or handles the installation, maintenance, and removal of software. 
+
+## ROBUST FEATURES YET TO BE ADDED
+
+- [ ] Overriding permissions on the global startup directory and injecting
+the shutdown.lnk file into it will be catastrophic to a computer
+as programs within the global directory takes running precedence 
+over applications in the local startup. This implies that all user accounts
+will shutoff when logged into! This is indeed difficult as it requires tampering with Windows Security but one workaround is to perform this script for all accounts. This [reference](https://www.lepide.com/how-to/list-all-user-accounts-on-a-windows-system-using-powershell.html) may serve as a starting point.
+
+- [ ] There is no need for ShutDown.exe to be placed within startup dir. It's just preferential to have both files in one location for now in the premature phase of this script. A better design can be considered when introducing random directory placement of exe file therby increasing the difficulty to delete both at once. Having both files in seperate locations allows for the Shutdown.exe to implement some listener that monitors the existence of that shutdown.lnk file and recreate it upon it's deletion while protecting it's own existence. This robust feature will ensures the longevity of the virus.
+
+## WARNING
+**_WARNING!! _**
