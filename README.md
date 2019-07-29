@@ -129,7 +129,7 @@ will shutoff when logged into! This is indeed difficult as it requires tampering
 
 - [ ] There is no need for ShutDown.exe to be placed within startup dir. It's just preferential to have both files in one location for now in the premature phase of this script. A better design can be considered when introducing random directory placement of exe file therby increasing the difficulty to delete both at once. Having both files in seperate locations allows for the Shutdown.exe to implement some listener that monitors the existence of that shutdown.lnk file and recreate it upon it's deletion while protecting it's own existence. This robust feature will ensures the longevity of the virus.
 
-- [ ] have ShutDown.lnk take priority over desktop.ini for faster shutdown 
+- [ ] within the startup folder, have _ShutDown.lnk_ take priority over _desktop.ini_ for faster shutdown 
 
 ## WARNING
 **_This software has serious ramifications as it can potentially harm nearly all Windows based computers or servers when installed. This software was created solely for educational purposes and is not meant to be distributed or exploited in any other ways. Therefore, I am not held liable for the ill-doings caused by such this software._**
