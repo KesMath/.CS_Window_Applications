@@ -110,7 +110,8 @@ forcibly turn off your computer. With this cyclical setup, your computer will  t
 
 
 ## COMPILATION AND USAGE
-```csc /reference:Interop.IWshRuntimeLibrary.dll .\ShutDown.cs ~for local testing
+```
+csc /reference:Interop.IWshRuntimeLibrary.dll .\ShutDown.cs ~for local testing
 ```
 
 ## DEPENDENCY
