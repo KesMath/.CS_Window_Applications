@@ -95,14 +95,14 @@ through such software, be warned that an equal level of backlash will surely fol
 **_THIS WAS CREATED SOLELY FOR EDUCATIONAL PURPOSES AND IS NOT TO BE USED ELSEWHERE. DO NOT USE THIS FOR ILLEGAL PURPOSES, PERIOD! ONLY OPERABLE ON WINDOWS OS!_**
 
 
-##SUMMARY
+## SUMMARY
 Creates a Shutdown.lnk (link or pointer file) in a user's startup directory that 
 calls the _"shutdown.exe"_ application everytime the host's
 account is logged into. this "ShutDown.exe" app starts the
 the _"C:\Windows\System32\shutdown.exe"_ process which will 
 forcibly turn off your computer. With this cyclical setup, your computer will  turn off every time the infected user account loggs in.
 
-##COUNTERMEASURES IF INFECTED
+## COUNTERMEASURES IF INFECTED
 1. Navigate to Windows Safe Mode Configurations
 2. Traverse Advanced Options until "Enable Safe Mode with Command Prompt" 
 3. Reboot Windows in safe mode and navigate to the startup folder using cmd prompt 
@@ -113,10 +113,10 @@ forcibly turn off your computer. With this cyclical setup, your computer will  t
 ```csc /reference:Interop.IWshRuntimeLibrary.dll .\ShutDown.cs ~for local testing
 ```
 
-##DEPENDENCY
+## DEPENDENCY
 Interop.IWshRuntimeLibrary.dll is a library reference used to create .lnk files. This .dll must be packaged together with ShutDown.cs using Visual Studio to create a .msi file as [such](https://github.com/KesMath/CS_Window_Applications/blob/master/ShutDownSetup/Debug/ShutDownSetup.msi).
-**_Note this .msi is non-lethal and simply launches a browser upon startup_**
-This Windows Installer file is the final product that abstracts or handles the installation, maintenance, and removal of software. 
+This Windows Installer file is the final product that abstracts or handles the installation, maintenance, and removal of this software application. 
+**_(Note this .msi is non-lethal and simply launches a browser upon startup.)_**
 
 ## ROBUST FEATURES YET TO BE ADDED
 
