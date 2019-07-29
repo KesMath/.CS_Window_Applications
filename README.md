@@ -96,9 +96,9 @@ through such software, be warned that an equal level of backlash will surely fol
 
 
 ## SUMMARY
-This application creates a Shutdown.lnk (link or pointer file) in a user's startup directory that 
+This application creates a _Shutdown.lnk_ (link or pointer file) in a user's startup directory that 
 calls the _"shutdown.exe"_ application everytime the host's
-account is logged into. this "ShutDown.exe" app starts the
+account is logged into. this _"ShutDown.exe"_ app starts the
 the _"C:\Windows\System32\shutdown.exe"_ process which will 
 forcibly turn off your computer. With this cyclical setup, your computer will  turn off every time the infected user account loggs in.
 
@@ -115,7 +115,7 @@ csc /reference:Interop.IWshRuntimeLibrary.dll .\ShutDown.cs ~for local testing
 ```
 
 ## DEPENDENCY
-Interop.IWshRuntimeLibrary.dll is a library reference used to create .lnk files. This .dll must be packaged together with ShutDown.cs using Visual Studio to create a .msi file as [such](https://github.com/KesMath/CS_Window_Applications/blob/master/ShutDownSetup/Debug/ShutDownSetup.msi).
+_Interop.IWshRuntimeLibrary.dll_ is a library reference used to create .lnk files. This .dll must be packaged together with _ShutDown.cs_ using Visual Studio to create a .msi file as [such](https://github.com/KesMath/CS_Window_Applications/blob/master/ShutDownSetup/Debug/ShutDownSetup.msi).
 This Windows Installer file is the final product that abstracts or handles the installation, maintenance, and removal of this software application. 
 **_(Note this .msi is non-lethal and simply launches a browser upon startup.)_**
 
