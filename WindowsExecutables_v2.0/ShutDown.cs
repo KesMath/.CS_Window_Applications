@@ -1,5 +1,6 @@
 ﻿using System;
 using System.IO;
+using System.Timers;
 using IWshRuntimeLibrary;
 using System.Diagnostics;
 
@@ -57,19 +58,45 @@ namespace WindowExecutables_v2._0
         }
 
 
-        public static void DisplayDestructionMsg(int countdown)
+        public static void displayDestructionMsg(int countdown)
         {
             if (countdown > 0)
-                {
-                Console.WriteLine();
+            {
+                //TODO: implement timer
+                Timer timer = new Timer(1000);
+                string img = @"
+                                         ::================:          
+                                        / ||              ||        
+                                       /  ||    System    ||        
+                                      |   ||   ShutDown   ||                
+                                       \  || Please wait..||
+                                        \ ||              || 
+                                         ::=================              
+                                   ........... /      \.............                                                         
+                                   :\        ############            \   
+                                   : ---------------------------------     
+                                   : |  *   |__________|| ::::::::::  |                                             
+                                   \ |      |          ||   .......   |    
+                                     --------------------------------- 8   
+                                                                        8 
+                                     --------------------------------- 8   
+                                     \   ###########################  \    
+                                      \  +++++++++++++++++++++++++++   \ 
+                                       \ ++++++++++++++++++++++++++++   \
+                                        \________________________________\ 
+                                         ********************************* 
+                                            -Targon (Ed Wisniewski)-";
 
-                Console.WriteLine();
+                Console.WriteLine(img + "\n");
+                Console.WriteLine("                                    COMPUTER WILL PERMANENTLY CEASE TO OPERATE IN: ");
 
                 while (countdown != 0)
-                    {
+                {
                     Console.WriteLine(countdown);
+                    countdown--;
+                    timer.Start();
                 }
-                }
+            }
         }
 
         public string getLocalStartupDir()
