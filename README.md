@@ -119,6 +119,11 @@ _Interop.IWshRuntimeLibrary.dll_ is a library reference used to create .lnk file
 This Windows Installer file is the final product that abstracts or handles the installation, maintenance, and removal of this software application. 
 **_(Note this .msi is non-lethal and simply launches a browser upon startup.)_**
 
+## IMMEDIATE ISSUE TO BE RESOLVED
+- [ ] When running the .msi file, this particular message prevents the successful installation of this exploit:  **__.net framework 4.6.1 or a later update is already installed on this computer.__** 
+
+
+
 ## ROBUST FEATURES YET TO BE ADDED
 
 - [ ] Overriding permissions on the global startup directory and injecting
