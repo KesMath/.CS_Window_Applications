@@ -89,7 +89,7 @@ through such software, be warned that an equal level of backlash will surely fol
 
 
 
-# :skull_and_crossbones::computer: RECURSIVE CPU SHUTDOWN :computer::skull_and_crossbones:
+# :skull_and_crossbones::computer: CYCLIC CPU SHUTDOWN :computer::skull_and_crossbones:
 
 ### DISCLAIMER
 **_THIS WAS CREATED SOLELY FOR EDUCATIONAL PURPOSES AND IS NOT TO BE USED ELSEWHERE. DO NOT USE THIS FOR ILLEGAL PURPOSES, PERIOD! ONLY OPERABLE ON WINDOWS OS!_**
