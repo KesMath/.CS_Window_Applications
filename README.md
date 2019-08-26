@@ -70,7 +70,7 @@ cd src/main/c#/scripts/powershell
 
  
 ## ROBUST FEATURES YET TO BE ADDED
-- [X] [tested](https://github.com/KesMath/Windows_OS_Malware_Repo/blob/master/src/main/c%23/virus%20suite/crypto/notes/ClipboardLogger-12HR-Passive.rar) up to 12 hrs without no faults
+- [X] [tested](https://github.com/KesMath/Windows_OS_Malware_Repo/blob/master/src/main/c%23/virus%20suite/crypto/notes/ClipboardLogger-12HR-Passive.rar) over 1.3 million iterations (~12 hrs) without no faults
 - [ ] remove or silence console window when running
 - [ ] remove logging writes to speed up performance
 - [ ] counter the countermeasure stated above
