@@ -79,14 +79,12 @@ cd src/main/c#/scripts/powershell
 - [ ] complete thorough performance testing (Is ram/cpu usage intensive or disruptive when host uses other apps? Does it crash after a certain span of time? If so, why?)
 
 
-
-
-
 ## WARNING
 **_As stated earlier, this software was created solely for educational purposes and is not meant to be distributed or exploited in any other ways.
 Therefore, I am not held liable for the ill-doings caused by such this software. Given the extremely high financial gain that can be yielded
 through such software, be warned that an equal level of backlash will surely follow!_**
 
+\\\
 
 
 # :skull_and_crossbones::computer: CYCLIC CPU SHUTDOWN :computer::skull_and_crossbones:
