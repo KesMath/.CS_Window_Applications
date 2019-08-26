@@ -84,8 +84,10 @@ cd src/main/c#/scripts/powershell
 Therefore, I am not held liable for the ill-doings caused by such this software. Given the extremely high financial gain that can be yielded
 through such software, be warned that an equal level of backlash will surely follow!_**
 
-******************************************************************************
-******************************************************************************
+*******************************************************************************
+*******************************************************************************
+*******************************************************************************
+*******************************************************************************
 
 
 # :skull_and_crossbones::computer: CYCLIC CPU SHUTDOWN :computer::skull_and_crossbones:
