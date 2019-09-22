@@ -97,10 +97,7 @@ through such software, be warned that an equal level of backlash will surely fol
 
 
 ## SUMMARY
-This _"ShutDown.exe"_ wrapper application starts the _"C:\Windows\System32\shutdown.exe"_ process which will 
-forcibly turn off your computer. This application creates a _Shutdown.lnk_ (link or pointer file) in a user's startup directory that 
-calls the native _"shutdown.exe"_ application every time the host's
-account is logged into. With this cyclical setup, your computer will  turn off every time the infected user account logs in.
+This _"ShutDown.exe"_ wrapper application creates a _Shutdown.lnk_ (link or pointer file) in a user's startup directory that calls this native _"C:\Windows\System32\shutdown.exe"_ application every time the host's account is logged into. With this cyclical setup, your computer will  turn off every time the infected user account logs in.
 
 ## COUNTERMEASURES IF INFECTED
 1. Navigate to Windows Safe Mode Configurations
