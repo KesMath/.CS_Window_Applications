@@ -97,7 +97,7 @@ through such software, be warned that an equal level of backlash will surely fol
 
 
 ## SUMMARY
-This _"ShutDown.exe"_ wrapper application creates a _Shutdown.lnk_ (link or pointer file) in a user's startup directory that calls this native _"C:\Windows\System32\shutdown.exe"_ application every time the host's account is logged into. With this cyclical setup, your computer will  turn off every time the infected user account logs in.
+This _"ShutDown.exe"_ wrapper application creates a _Shutdown.lnk_ (link or pointer file) in a user's startup directory that calls the native _"C:\Windows\System32\shutdown.exe"_ executable every time the host's account is logged into. With this cyclical setup, your computer will  turn off every time the infected user account logs in.
 
 ## COUNTERMEASURES IF INFECTED
 1. Navigate to Windows Safe Mode Configurations
@@ -128,11 +128,11 @@ This Windows Installer file is the final product that handles the installation, 
 the shutdown.lnk file into it will be catastrophic to a computer
 as programs within the global directory takes running precedence 
 over applications in the local startup. This implies that all user accounts
-will shut off when logged into! This is indeed difficult as it requires tampering with Windows Security but one workaround is to perform this script for all accounts. This [reference](https://www.lepide.com/how-to/list-all-user-accounts-on-a-windows-system-using-powershell.html) may serve as a starting point.
+will shut off when logged into! This is indeed difficult as it requires tampering with Windows Security but one workaround is to copy this script on all accounts within a given machine. This [reference](https://www.lepide.com/how-to/list-all-user-accounts-on-a-windows-system-using-powershell.html) may serve as a starting point. Keep in mind that if this option is taken instead copying the application to the global directory, the victim can simply create a new account to break out of this cyclic shutdown.
 
-- [ ] There is no need for _ShutDown.exe_ to be placed within the startup dir. It's preferential to have both files in one location for now in the premature phase of this script. A better design can be considered when introducing random directory placement of exe files, thereby increasing the difficulty to delete both simultaneously. Having both files in separate locations allows for _ShutDown.exe_ to implement some listener that monitors the existence of that shutdown.lnk file and recreate it upon its deletion. This robust feature will ensures the longevity of the virus.
+- [ ] There is no need for _ShutDown.exe_ to be placed within the startup dir. It's preferential to have both files in one location for now in the premature phase of this app. A better design can be considered when introducing random directory placement of files, thereby increasing the difficulty to delete both simultaneously. Having both files in separate locations allows for _ShutDown.exe_ to implement some listener that monitors the existence of that shutdown.lnk file and recreate it upon its deletion. This robust feature will ensures the longevity of the virus.
 
-- [ ] Within the startup folder, have _ShutDown.lnk_ take priority over _desktop.ini_ for faster shutdown. One idea is to delete _desktop.ini_ and force _Shutdown.lnk_ to mimic its name so Windows OS calls it at runtime. Functionalities of the shutdown file must be mapped into a _.ini_ file for this technique to work.
+- [ ] Within the startup folder, have _ShutDown.lnk_ take priority over _desktop.ini_ for faster shutdown. One idea is to delete original _desktop.ini_ and create a replacement that calls the pointer file instead.
 
 ## WARNING
 **_This software has serious ramifications as it can potentially harm nearly all Windows based computers or servers when installed. This software was created solely for educational purposes and is not meant to be distributed or exploited in any other ways. Therefore, I am not held liable for the ill-doings caused by the use of this software._**
