@@ -71,6 +71,7 @@ cd src/main/c#/scripts/powershell
  
 ## FUTURE IMPLEMENTATION
 - [X] [tested](https://github.com/KesMath/Windows_OS_Malware_Repo/blob/master/src/main/c%23/virus%20suite/crypto/notes/ClipboardLogger-12HR-Passive.rar) over 1.3 million iterations (~12 hrs) without no faults
+- [ ] implement source code using Event Driven Programmming paradigm
 - [ ] turn into a daemon by silencing console window
 - [ ] remove logging writes to speed up performance
 - [ ] counter the countermeasure stated above
