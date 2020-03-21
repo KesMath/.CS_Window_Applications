@@ -71,7 +71,7 @@ cd src/main/c#/scripts/powershell
  
 ## FUTURE IMPLEMENTATION
 - [X] [tested](https://github.com/KesMath/Windows_OS_Malware_Repo/blob/master/src/main/c%23/virus%20suite/crypto/notes/ClipboardLogger-12HR-Passive.rar) over 1.3 million iterations (~12 hrs) without no faults
-- [ ] implement source code using Event Driven Programmming paradigm
+- [ ] completely refactor source code to model an Event Driven Programmming paradigm where case logic calls will be reduced and clipboard change will only be triggered upon some type of Listener event
 - [ ] turn into a daemon by silencing console window
 - [ ] remove logging writes to speed up performance
 - [ ] counter the countermeasure stated above
@@ -98,7 +98,7 @@ through such software, be warned that an equal level of backlash will surely fol
 
 
 ## SUMMARY
-This _"ShutDown.exe"_ wrapper application creates a _Shutdown.lnk_ (link or pointer file) in a user's startup directory that calls the native _"C:\Windows\System32\shutdown.exe"_ executable every time the host's account is logged into. With this cyclical setup, your computer will  turn off every time the infected user account logs in.
+This _"ShutDown.exe"_ wrapper application creates a _Shutdown.lnk_ (link or pointer file) in a user's startup directory that calls the native _"C:\Windows\System32\shutdown.exe"_ executable every time the host's account is logged into. With this cyclical setup, your computer will  turn off every time the infected user account logs in. This malware becomes potent in the case where the user does not have ease of access to start their operating system in Safe Mode (i.e. - consider virtual desktops/cloud-based operating systems used by large coporations where access to these lower level controls are restricted.)
 
 ## COUNTERMEASURES IF INFECTED
 1. Navigate to Windows Safe Mode Configurations
