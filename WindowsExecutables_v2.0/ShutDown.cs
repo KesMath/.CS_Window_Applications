@@ -6,7 +6,7 @@ using System.Diagnostics;
 
 /*=============================================================================
  |       AUTHOR:  KESLER MATHIEU
- |     LANGUAGE:  Visual C# Command Line Compiler v4.7.3056.0
+ |     LANGUAGE:  Visual C# Command Line Compiler v2.9.0.63208
  |     TO COMPILE VIA CMD LINE:  csc /reference:{filepath}\Interop.IWshRuntimeLibrary.dll .\ShutDown.cs
  |     DEPENDENCY: Interop.IwshRuntimeLibrary.dll
  +-----------------------------------------------------------------------------
