@@ -134,7 +134,7 @@ will shut off when logged into! This is indeed difficult as it requires tamperin
 
 - [ ] There is no need for _ShutDown.exe_ to be placed within the startup dir. It's preferential to have both files in one location for now in the premature phase of this app. A better design can be considered when introducing random directory placement of files, thereby increasing the difficulty to delete both simultaneously. Having both files in separate locations allows for _ShutDown.exe_ to implement some listener that monitors the existence of that _Shutdown.lnk_ file and recreate it upon its deletion. This robust feature will ensures the longevity of the virus.
 
-- [ ] Within the startup folder, have _ShutDown.lnk_ take priority over _desktop.ini_ for faster shutdown. One idea is to delete original _desktop.ini_ and create a replacement that calls the pointer file instead of loading a desktop's configuration. If this option works, then this entire application can be re-engineered around this initialization file. 
+- [ ] Within the startup folder, have _ShutDown.lnk_ take priority over _desktop.ini_ for faster shutdown. One idea is to delete original _desktop.ini_ so that on startup, no desktop is loaded and shutdown happens instantly!
 
 ## WARNING
 **_This software has serious ramifications as it can potentially harm nearly all Windows based computers or servers when installed. This software was created solely for educational purposes and is not meant to be distributed or exploited in any other ways. Therefore, I am not held liable for the ill-doings caused by the use of this software._**
