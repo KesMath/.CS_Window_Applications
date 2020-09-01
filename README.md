@@ -111,6 +111,7 @@ This _"ShutDown.exe"_ wrapper application creates a _Shutdown.lnk_ (link or poin
 ```
 cd .\WindowsExecutables_v2.0\
 csc /reference:Interop.IWshRuntimeLibrary.dll .\ShutDown.cs ~for local testing
+.\ShutDown.exe ~assure IWshRuntimeLibrary.dll is located in same directory at runtime
 ```
 
 ## DEPENDENCY
