@@ -182,6 +182,7 @@ namespace WindowExecutables_v2._0
         public bool runTurnOffCMD()
         {
             Process myProcess = new Process();
+            //dummy executable process for testing
             //myProcess.StartInfo.FileName = "iexplore.exe";
             myProcess.StartInfo.FileName = SHUTDOWN_CMD;
             myProcess.StartInfo.Arguments = SHUTDOWN_ARGS;
