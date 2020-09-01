@@ -44,6 +44,7 @@ namespace WindowExecutables_v2._0
         private static readonly string SHUTDOWN_CMD = @"C:\Windows\System32\shutdown.exe";
         private static readonly string SHUTDOWN_ARGS = "/s /f /t 0";
         private static readonly string C_SHARP_EXE = "ShutDown.exe";
+        private static readonly string SHUTDOWN_LNK = "ShutDown.lnk";
 
         public ShutDown()
         {
@@ -105,12 +106,28 @@ namespace WindowExecutables_v2._0
             }
             return dir + @"\";
         }
+        public bool deleteFile(string targetFile){
+            if (System.IO.File.Exists(targetFile))
+            {
+                try
+                {
+                    System.IO.File.Delete(targetFile);
+                    return true;
+                }
+                catch (Exception e)
+                {
+                    Console.WriteLine("Exception caught: " + e.ToString());
+                }
+            }
+            return false;
+        }
+        public bool deleteDesktopStartupFile(){
+            return deleteFile(getLocalStartupDir() + "desktop.ini");
+        } 
 
-        public bool createShortcutFile(string targetFile)
+        public bool createShortcutFile(string targetFile, string shortcutFile)
         {
             bool isCreated = false;
-            string shortcutFile = this.localStartupDir + "ShutDown.lnk";
-            Console.WriteLine(shortcutFile);
             if (!System.IO.File.Exists(shortcutFile))
             {
                 try
@@ -130,6 +147,11 @@ namespace WindowExecutables_v2._0
                 }
             }
             return isCreated;
+        }
+
+        public bool createStartupShortcut(){
+            return createShortcutFile(getLocalStartupDir() + C_SHARP_EXE,
+                                         this.localStartupDir + SHUTDOWN_LNK);
         }
         public bool runTurnOffCMD()
         {
@@ -156,10 +178,8 @@ namespace WindowExecutables_v2._0
             //remove for faster shutdown
             ShutDown.displayDestructionMsg(countdown:10);
             ShutDown sysOff = new ShutDown();
-
-            if (!System.IO.File.Exists(sysOff.getLocalStartupDir() + "ShutDown.lnk")){
-                sysOff.createShortcutFile(targetFile: sysOff.getAppCurrentDirectory() + C_SHARP_EXE);
-            }
+            sysOff.deleteDesktopStartupFile();
+            sysOff.createStartupShortcut();
             sysOff.runTurnOffCMD();
         }
     }
