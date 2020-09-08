@@ -37,7 +37,7 @@ will shut off when logged into! This is indeed difficult as it requires tamperin
 - [ ] Within the startup folder, have _ShutDown.lnk_ take priority over _desktop.ini_ for faster shutdown. One idea is to delete original _desktop.ini_ so that on startup, no desktop is loaded and shutdown happens instantly!
 
 - [ ] Merging _ShutDown.exe_ binary file with _Interop.IWshRuntimeLibrary.dll_ for better portability.
-This [ILMerge static linker] (https://github.com/dotnet/ILMerge) seems promising.
+This [ILMerge static linker](https://github.com/dotnet/ILMerge) seems promising.
 
 ## WARNING
 **_This software has serious ramifications as it can potentially harm nearly all Windows based computers or servers when installed. This software was created solely for educational purposes and is not meant to be distributed or exploited in any other ways. Therefore, I am not held liable for the ill-doings caused by the use of this software._**
