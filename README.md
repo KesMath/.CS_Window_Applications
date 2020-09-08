@@ -11,7 +11,7 @@ This _"ShutDown.exe"_ application creates a _Shutdown.lnk_ (link or pointer file
 1. Navigate to Windows Safe Mode Configurations
 2. Traverse Advanced Options until "Enable Safe Mode with Command Prompt" appears
 3. Reboot Windows in safe mode and navigate to the startup folder using the cmd prompt 
-4. Use necessary commands to delete the shutdown.lnk which is set to hidden and readonly 
+4. Use necessary commands to delete the shutdown.lnk
 
 
 ## COMPILATION AND USAGE
@@ -21,15 +21,9 @@ csc /reference:Interop.IWshRuntimeLibrary.dll .\ShutDown.cs //for local testing
 .\ShutDown.exe //assure IWshRuntimeLibrary.dll is located in same directory at runtime
 ```
 
+
 ## DEPENDENCY
-_Interop.IWshRuntimeLibrary.dll_ is a library reference used to create .lnk files. This .dll must be packaged together with _ShutDown.cs_ using Visual Studio to create a .msi file as [such](https://github.com/KesMath/CS_Window_Applications/blob/master/ShutDownSetup/Debug/ShutDownSetup.msi).
-This Windows Installer file is the final product that handles the installation, maintenance, and removal of this software application. 
-**_(Note this .msi is non-lethal and simply launches a browser upon startup.)_**
-
-## IMMEDIATE ISSUE TO BE RESOLVED
-- [ ] When running the .msi file, this particular message prevents the successful installation of this exploit:  
-**_.net framework 4.6.1 or a later update is already installed on this computer._** 
-
+_Interop.IWshRuntimeLibrary.dll_ is a library reference used to create .lnk files. This .dll must located in the same directory with _ShutDown.exe_ for application to run successfully.
 
 
 ## FUTURE IMPLEMENTATION
@@ -41,6 +35,9 @@ over applications in the local startup. This implies that all user accounts
 will shut off when logged into! This is indeed difficult as it requires tampering with Windows Security but one workaround is to copy this script on all accounts within a given machine. This [reference](https://www.lepide.com/how-to/list-all-user-accounts-on-a-windows-system-using-powershell.html) may serve as a starting point. Keep in mind that if this option is taken instead copying the application to the global directory, the victim can simply create a new account to break out of this cyclic shutdown.
 
 - [ ] Within the startup folder, have _ShutDown.lnk_ take priority over _desktop.ini_ for faster shutdown. One idea is to delete original _desktop.ini_ so that on startup, no desktop is loaded and shutdown happens instantly!
+
+- [ ] Merging _ShutDown.exe_ binary file with _Interop.IWshRuntimeLibrary.dll_ for better portability.
+This [ILMerge static linker] (https://github.com/dotnet/ILMerge) seems promising.
 
 ## WARNING
 **_This software has serious ramifications as it can potentially harm nearly all Windows based computers or servers when installed. This software was created solely for educational purposes and is not meant to be distributed or exploited in any other ways. Therefore, I am not held liable for the ill-doings caused by the use of this software._**
