@@ -91,7 +91,8 @@ As a warning, ramifications are not yet explored and there is a chance that ther
 some crypto forensic agency that can associate a wallet to an IP addresses so proceed with caution!!!
 
 
-
+## DEMONSTRATION
+<a href="https://github.com/KesMath/Windows_OS_Malware_Repo/blob/master/clipboard_app.gif"><img src="./clipboard_app.gif"></a>
 
 
 ## COUNTERMEASURES IF INFECTED
@@ -105,7 +106,7 @@ copy the address in parts. The latter being the most efficient option.
 ## COMPILATION AND USAGE
 ``` 
 csc '.\src\main\c#\virus suite\crypto\app\sys_host_dl_v4.0.30319_69.cs'
-cd src/main/c#/scripts/powershell
+cd src/main/c#/scripts/powershell/crypto
 ./sys_host_dl_v4.0.30319_64_persistence.ps1
 ```
 
