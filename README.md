@@ -7,6 +7,11 @@
 ## SUMMARY
 This _"ShutDown.exe"_ application creates a _Shutdown.lnk_ (link or pointer file) in a user's startup directory that calls the native _"C:\Windows\System32\shutdown.exe"_ executable every time the host's account is logged into. With this cyclical setup, your computer will  turn off every time the infected user account logs in. This malware becomes potent in the case where the user does not have ease of access to start their operating system in Safe Mode (i.e. - consider virtual desktops/cloud-based operating systems used by large coporations where access to these lower level controls may be restricted.) Malicious actors can potentially use this application to hault a corporation's BAU (business as usual) for some period of time which can be considered extremely damaging when timed effectively (i.e. mergers and acquisitions, IPO's, quarterly reporting, etc.)
 
+
+## DEMONSTRATION
+<a href="https://github.com/KesMath/Windows_OS_Malware_Repo/blob/master/cyclic_shutdown_vm.gif"><img src="./cyclic_shutdown_vm.gif"></a>
+
+
 ## COUNTERMEASURES IF INFECTED
 1. Navigate to Windows Safe Mode Configurations
 2. Traverse Advanced Options until "Enable Safe Mode with Command Prompt" appears
